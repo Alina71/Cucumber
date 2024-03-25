@@ -4,6 +4,7 @@ package utils;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -24,7 +25,9 @@ public class CommonMethods extends PageInitializer {
     public void openBrowserAndLaunchApplication() {
         switch (ConfigReader.read("browser")) {
             case "Chrome":
-                driver = new ChromeDriver();
+                ChromeOptions options=new ChromeOptions();
+                options.setHeadless(true);
+                driver = new ChromeDriver(options);
                 break;
             case "FireFox":
                 driver = new FirefoxDriver();

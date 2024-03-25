@@ -1,6 +1,7 @@
 package utils;
 
 
+import APISteps.APIWorkFlowSteps;
 import org.json.JSONObject;
 
 public class APIPayloadConstants {
@@ -50,7 +51,7 @@ public class APIPayloadConstants {
     public static String updateEmployeeJsonPayload() {
 
         JSONObject obj = new JSONObject();
-        obj.put("employee_id", "106870A");
+        obj.put("employee_id", APIWorkFlowSteps.employee_id);
         obj.put("emp_firstname","mario");
         obj.put("emp_lastname", "germeen");
         obj.put("emp_middle_name","ms");
